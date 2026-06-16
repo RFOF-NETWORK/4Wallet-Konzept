@@ -12,16 +12,23 @@ Dies ist dessen Arbeitsverzeichnis in VS Code, in dem die gesamte Programmlogik 
 │   │   ├── bip39-handler.ts      # Logik zur Verifizierung der Seed-Phrasen (lokal)
 │   │   ├── handshake-manager.ts  # Steuerung der Verbindung (QR/Hardware)
 │   │   └── signature-engine.ts   # Mathematische Signatur-Logik (isoliert)
+├── /blockchain             # NEU: Smart Contract & Blockchain-Logik
+│   │   ├── contract-manager.ts # Steuerung: Mint, Burn, Wrap, Bridge
+│   │   ├── block-processor.ts  # Logik für Block-Struktur (#10, #11, Hashes, Nonce)
+│   │   └── cross-chain.ts      # Logik für Token-Bridge (ETH/TON/Mainnet/Testnet)
 │   ├── /components
 │   │   ├── login-popup.tsx       # UI für den initialen Connect/Register-Button
 │   │   ├── settings-menu.tsx     # UI zur Verwaltung/Löschung von Verbindungen
-│   │   └── qr-scanner.tsx        # UI-Komponente für den QR-Handshake
+│   │   ├── qr-scanner.tsx        # UI-Komponente für den QR-Handshake
+│   │   └── contract-ui.tsx     # UI-Buttons: Mint, Burn, Wrap, Bridge
 │   ├── /hooks
 │   │   ├── use-wallet-state.ts   # Zustand (isLoggedIn, address, isConnected)
-│   │   └── use-connection-manager.ts # Listener für Session-Events
+│   │   ├── use-connection-manager.ts # Listener für Session-Events
+│   │   └── use-contract.ts     # Hook zum Ausführen von Mint/Burn/Bridge
 │   ├── /services
-│   │    ├── coingecko-api.ts      # Preis-Daten für BTC/ETH/TON
-│   │   └── blockchain-fetcher.ts # Datenabruf von der Blockchain (Read-Only)
+│   │   ├── coingecko-api.ts      # Preis-Daten für BTC/ETH/TON
+│   │   ├── blockchain-fetcher.ts # Datenabruf von der Blockchain (Read-Only)
+│   │   └── admin-provider.ts   # NEU: Berechtigungs-Layer für dich als Admin
 │   ├── /store                    # NEU: Zentraler Zustand für das gesamte System
 │   │   └── wallet-store.ts       # Speichert die 'Connected'-Liste & Login-Status
 │   │
