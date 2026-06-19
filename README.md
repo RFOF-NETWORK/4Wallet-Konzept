@@ -1,4 +1,4 @@
-# 4Wallet-Konzept
+﻿# 4Wallet-Konzept
 
 ### 1. Die Entwicklungs-Struktur (Source Repository)
 
@@ -40,6 +40,7 @@ Dies ist dessen Arbeitsverzeichnis in VS Code, in dem die gesamte Programmlogik 
 │   ├── favicon.ico
 │   └── logo-rfof.svg             # Branding für das Netzwerk
 ├── package.json
+├── package-lock.json
 └── tsconfig.json
 ```
 
